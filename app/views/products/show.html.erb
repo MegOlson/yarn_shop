@@ -1,1 +1,9 @@
 <h1> <%= @product.name.capitalize %> </h1>
+
+<h3>Reviews</h3>
+<hr>
+
+<%= render "reviews/index" %>
+
+<h2>Post a Review</h2>
+<%= render "reviews/form" %>
