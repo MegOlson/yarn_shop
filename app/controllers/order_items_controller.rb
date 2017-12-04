@@ -7,10 +7,10 @@ class OrderItemsController < ApplicationController
     elsif params[:commit] == "Add to cart"
       @order = current_order
       @message = "Item added to Cart."
-      session[:order_id] = @order.id
     end
     @item = @order.order_items.new(item_params)
     if @order.save
+      session[:order_id] = @order.id
       flash[:notice] = @message
     end
     redirect_to products_path

@@ -28,4 +28,16 @@ nav a {
 
 #low-stock {
   color: red;
+  font-size: 10px;
+}
+
+.all-yarn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+body {
+  margin-bottom: 100px;
 }

@@ -1,48 +1,86 @@
-<h1>On sale</h1>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Featured Products:</h1>
 
-<% if @discount_products.any? %>
-  <% @discount_products.each do |product| %>
+    <% if @featured_products.any? %>
+      <% @featured_products.each do |product| %>
 
-    <p>
-      <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.sale_price %> (Original Price : <%= number_to_currency product.price %>)
-      <% if product.stock <= 10 %>
-        <h6 id="low-stock">Low stock</h6>
+        <p>
+          <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.sale_price %> (Original Price : <%= number_to_currency product.price %>)
+          <% if product.stock <= 10 %>
+            <h6 id="low-stock">Low stock</h6>
+          <% end %>
+
+          <div class="cart-form">
+            <%= form_for @order_item do |f| %>
+              <%= f.hidden_field :product_id, value: product.id %>
+              <%= f.number_field :quantity, class: "form-control" %>
+              <%= f.submit "Add to cart", class: 'btn btn-info' %>
+              <%= f.submit "Save for Later", class: 'btn btn-info' %>
+            <% end %>
+          </div>
+        </p>
       <% end %>
+    <% else %>
+      <p>No featured items.</p>
+    <% end %>
+  </div>
 
-      <div class="cart-form">
-        <%= form_for @order_item do |f| %>
-          <%= f.hidden_field :product_id, value: product.id %>
-          <%= f.number_field :quantity, class: "form-control" %>
-          <%= f.submit "Add to cart", class: 'btn btn-info' %>
-          <%= f.submit "Save for Later", class: 'btn btn-info' %>
-        <% end %>
-      </div>
-    </p>
-  <% end %>
+  <div class="col-md-6">
+    <h1>Yarn Sale!!</h1>
 
-<% else %>
-  <p>No sale items.</p>
-<% end %>
+    <% if @discount_products.any? %>
+      <% @discount_products.each do |product| %>
+
+        <p>
+          <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.sale_price %> (Original Price : <%= number_to_currency product.price %>)
+          <% if product.stock <= 10 %>
+            <h6 id="low-stock">Low stock</h6>
+          <% end %>
+
+          <div class="cart-form">
+            <%= form_for @order_item do |f| %>
+              <%= f.hidden_field :product_id, value: product.id %>
+              <%= f.number_field :quantity, class: "form-control" %>
+              <%= f.submit "Add to cart", class: 'btn btn-info' %>
+              <%= f.submit "Save for Later", class: 'btn btn-info' %>
+            <% end %>
+          </div>
+        </p>
+      <% end %>
+    <% else %>
+      <p>No sale items.</p>
+    <% end %>
+
+  </div>
+
+</div>
 <hr>
 <h1>Yarn</h1>
 <% if @products.any? %>
-  <% @products.each do |product| %>
-    <p>
-      <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %>
-      <% if product.stock <= 10 %>
-        <h6 id="low-stock">Low stock</h6>
-      <% end %>
+  <div class="all-yarn">
+    <% @products.each do |product| %>
 
-      <div class="cart-form">
-        <%= form_for @order_item do |f| %>
-          <%= f.hidden_field :product_id, value: product.id %>
-          <%= f.number_field :quantity, class: "form-control" %>
-          <%= f.submit "Add to cart", class: 'btn btn-info' %>
-          <%= f.submit "Save for Later", class: 'btn btn-info' %>
+      <div class="flex-container">
+        <br>
+        <hr>
+        <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %> |
+        <% if product.stock <= 10 %>
+          <span id="low-stock">Low Stock</span>
         <% end %>
+
+        <div class="cart-form">
+          <%= form_for @order_item do |f| %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.number_field :quantity, class: "form-control" %>
+            <%= f.submit "Add to cart", class: 'btn btn-info' %>
+            <%= f.submit "Save for Later", class: 'btn btn-info' %>
+          <% end %>
+        </div>
       </div>
-    </p>
-  <% end %>
+      <hr>
+    <% end %>
+  </div>
 <% else %>
     <p>Nifty products coming soon!</p>
 <% end %>

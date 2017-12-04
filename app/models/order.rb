@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
   has_many :order_items
-  validates_presence_of :total_price, :status
+  validates_presence_of :total_price
   before_save :update_total
   before_create :update_status
 
