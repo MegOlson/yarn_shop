@@ -2,14 +2,9 @@
   "RSpec": {
     "coverage": {
       "/Users/Guest/Desktop/yarn_shop/spec/models/account_spec.rb": [
-
-      ],
-      "/Users/Guest/Desktop/yarn_shop/spec/models/order_item_spec.rb": [
         1,
         null,
         1,
-        2,
-        2,
         2,
         null
       ],
@@ -582,6 +577,29 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/yarn_shop/app/models/account.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/yarn_shop/spec/models/order_item_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
+      ],
       "/Users/Guest/Desktop/yarn_shop/app/models/order_item.rb": [
         1,
         1,
@@ -665,6 +683,6 @@
 
       ]
     },
-    "timestamp": 1512425362
+    "timestamp": 1512425435
   }
 }
