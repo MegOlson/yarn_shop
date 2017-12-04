@@ -646,18 +646,25 @@
         null
       ],
       "/Users/Guest/Desktop/yarn_shop/spec/models/review_spec.rb": [
-
-      ],
-      "/Users/Guest/Desktop/yarn_shop/spec/models/user_spec.rb": [
-
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null
       ],
       "/Users/Guest/Desktop/yarn_shop/app/models/review.rb": [
         1,
         1,
         1,
+        1,
         null
+      ],
+      "/Users/Guest/Desktop/yarn_shop/spec/models/user_spec.rb": [
+
       ]
     },
-    "timestamp": 1512425266
+    "timestamp": 1512425362
   }
 }
