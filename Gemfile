@@ -15,6 +15,7 @@ gem 'devise'
 gem 'paperclip', '~> 5.0.0'
 gem 'rails_admin', '~> 1.2'
 gem 'sqlite3'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
