@@ -1,12 +1,21 @@
 class OrderItemsController < ApplicationController
 
   def create
-    @order = current_order
+    if params[:commit] == "Save for Later"
+      @order = current_bookmark
+      @message = "Item saved for later."
+    elsif params[:commit] == "Add to cart"
+      @order = current_order
+      @message = "Item added to Cart."
+      session[:order_id] = @order.id
+    end
     @item = @order.order_items.new(item_params)
-    @order.save
-    session[:order_id] = @order.id
+    if @order.save
+      flash[:notice] = @message
+    end
     redirect_to products_path
   end
+
 
   def destroy
     @order = current_order

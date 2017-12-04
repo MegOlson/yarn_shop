@@ -5,6 +5,9 @@ class Order < ActiveRecord::Base
   before_create :update_status
 
   def calculate_total
+    # if product.on_sale
+    #   product.sale_price = product.price
+    # end
     self.order_items.collect { |item| item.product.price * item.quantity }.sum
   end
 
