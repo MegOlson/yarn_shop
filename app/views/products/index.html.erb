@@ -1,5 +1,32 @@
-<h1>Yarn</h1>
+<h1>On sale</h1>
 
+<% if @discount_products.any? %>
+  <% @discount_products.each do |product| %>
+
+    <p>
+      <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %>
+      <% if product.stock <= 10 %>
+        <h6 id="low-stock">Low stock</h6>
+      <% end %>
+
+      <div class="cart-form">
+        <%= form_for @order_item do |f| %>
+          <%= f.hidden_field :product_id, value: product.id %>
+          <%= f.number_field :quantity, class: "form-control" %>
+          <%= f.submit "Add to cart", class: 'btn btn-info' %>
+        <% end %>
+      </div>
+      <div class="save-for-later">
+        <button class="btn btn-info"> <%= link_to "Save for Later", cart_path, method: 'save' %> </button>
+      </div>
+    </p>
+  <% end %>
+  
+<% else %>
+  <p>No sale items.</p>
+<% end %>
+<hr>
+<h1>Yarn</h1>
 <% if @products.any? %>
   <% @products.each do |product| %>
     <p>
