@@ -1,1 +1,9 @@
-<h1></h1>
+<h1>Products</h1>
+
+<% if @products.any? %>
+  <% @products.each do |product| %>
+    <p> <%= product.name %> </p>
+  <% end %>
+<% else %>
+    <p>Nifty products coming soon!</p>
+<% end %>
