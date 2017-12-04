@@ -9,9 +9,13 @@ class OrderItemsController < ApplicationController
       @message = "Item added to Cart."
     end
     @item = @order.order_items.new(item_params)
-    if @order.save
-      session[:order_id] = @order.id
-      flash[:notice] = @message
+    if @item.product.stock < 1
+      flash[:notice] = "Out of stock."
+    else
+      if @order.save
+        session[:order_id] = @order.id
+        flash[:notice] = @message
+      end
     end
     redirect_to products_path
   end
