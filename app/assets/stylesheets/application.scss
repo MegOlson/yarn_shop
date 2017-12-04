@@ -7,6 +7,11 @@
 
 .cart-form .btn {
   margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.save-for-later a {
+  color: white;
 }
 
 nav {
@@ -19,4 +24,8 @@ nav a {
 
 .inline {
   display: inline;
+}
+
+#low-stock {
+  color: red;
 }

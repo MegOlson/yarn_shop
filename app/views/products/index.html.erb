@@ -12,6 +12,9 @@
           <%= f.submit "Add to cart", class: 'btn btn-info' %>
         <% end %>
       </div>
+      <div class="save-for-later">
+        <button class="btn btn-info"> <%= link_to "Save for Later", cart_path, method: 'save' %> </button>
+      </div>
     </p>
   <% end %>
 <% else %>
