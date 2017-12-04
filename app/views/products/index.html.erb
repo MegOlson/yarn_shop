@@ -3,7 +3,7 @@
 <% if @products.any? %>
   <% @products.each do |product| %>
     <p>
-      <%= link_to product.name, product_path(product) %> | <%= number_to_currency product.price %>
+      <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %>
 
       <div class="cart-form">
         <%= form_for @order_item do |f| %>
