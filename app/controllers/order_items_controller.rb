@@ -11,6 +11,8 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(item_params)
     if @item.product.stock < 1
       flash[:notice] = "Out of stock."
+    elsif @item.product.stock < @item.quantity
+      flash[:notice] = "We don't have enough in stock for this order."
     else
       if @order.save
         session[:order_id] = @order.id
