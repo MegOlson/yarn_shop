@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  belongs_to :account
   has_many :orders
   has_many :reviews
   # Include default devise modules. Others available are:
