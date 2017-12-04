@@ -561,7 +561,6 @@
         1,
         1,
         1,
-        1,
         null,
         null,
         1,
@@ -680,9 +679,14 @@
         null
       ],
       "/Users/Guest/Desktop/yarn_shop/spec/models/user_spec.rb": [
-
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
       ]
     },
-    "timestamp": 1512425435
+    "timestamp": 1512425529
   }
 }
