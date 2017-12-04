@@ -2,12 +2,13 @@
   <h1>Welcome to Nifty Knitters!</h1>
 </div>
 <hr>
+
 <div class="row">
   <div class="col-md-6">
     <h2>Featured Products:</h2>
     <% if @featured_products.any? %>
       <% @featured_products.each do |product| %>
-        <%= link_to product.name.capitalize, product_path(product) %>
+        <h3><%= link_to product.name.capitalize, product_path(product) %></h3>
       <% end %>
     <% else %>
       <p>There are no featured products.</p>
@@ -18,7 +19,7 @@
     <h2>Yarn Sale!!</h2>
     <% if @discount_products.any? %>
       <% @discount_products.each do |product| %>
-        <%= link_to product.name.capitalize, product_path(product) %>
+        <h3><%= link_to product.name.capitalize, product_path(product) %></h3>
       <% end %>
     <% else %>
       <p>There are no discounted products.</p>

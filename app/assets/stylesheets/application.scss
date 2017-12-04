@@ -1,11 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-.cart-form {
-  width: 5%;
+a {
+  color: grey;
 }
 
-.cart-form .btn {
+.cart-form {
+  width: 30%;
+}
+
+.specials-form {
+  width: 10%;
+}
+
+.cart-form, .specials-form, .btn {
   margin-top: 5px;
   margin-bottom: 2px;
 }
@@ -15,7 +24,7 @@
 }
 
 nav {
-  background-color: lavender;
+  background-color: rgba(106, 152, 151, .4);
 }
 
 nav a {
@@ -40,4 +49,5 @@ nav a {
 
 body {
   margin-bottom: 100px;
+  font-family: 'Open Sans', sans-serif;
 }
