@@ -4,6 +4,9 @@
   <% @products.each do |product| %>
     <p>
       <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %>
+      <% if product.stock <= 10 %>
+        <h6 id="low-stock">Low stock</h6>
+      <% end %>
 
       <div class="cart-form">
         <%= form_for @order_item do |f| %>
