@@ -7,4 +7,5 @@ describe Product do
   it { should validate_presence_of :price }
   it { should validate_presence_of :on_sale }
   it { should validate_presence_of :stock }
+  it { should validate_presence_of :featured }
 end
