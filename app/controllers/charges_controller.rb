@@ -21,6 +21,7 @@ class ChargesController < ApplicationController
 
     Product.lower_stock(current_order)
     Order.empty_cart(current_order)
+    current_order.save
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
