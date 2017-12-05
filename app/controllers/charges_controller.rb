@@ -19,6 +19,7 @@ class ChargesController < ApplicationController
       :receipt_email => customer.email
     )
 
+    Product.lower_stock(current_order)
     Order.empty_cart(current_order)
 
     rescue Stripe::CardError => e

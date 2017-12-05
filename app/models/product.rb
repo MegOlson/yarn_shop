@@ -5,4 +5,11 @@ class Product < ActiveRecord::Base
   scope :on_sale, -> { where("on_sale = ?", (true))}
   scope :featured, -> { where("featured = ?", (true))}
 
+  def self.lower_stock(current_order)
+    current_order.order_items.each do |item|
+      product = Product.find(item.product_id)
+      product.update({stock: product.stock - item.quantity})
+    end
+  end
+
 end
