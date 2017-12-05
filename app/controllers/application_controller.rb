@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def current_bookmark
-  #   if session[:order_id]
-  #     current_user = Order.find(session[:order_id])
-  #     current_user.account.bookmarked
-  #   end
-  # end
+  def current_bookmark
+    if session[:order_id]
+      current_user = Order.find(session[:order_id])
+      current_user.bookmarked
+    end
+  end
 
   protected
 

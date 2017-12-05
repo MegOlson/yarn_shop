@@ -3,8 +3,21 @@
 <% if @order_items.any? %>
 <ol>
   <% @order_items.each do |item| %>
-    <li><%= item.product.name.capitalize %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
-    <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></li>
+
+    <li>
+      <%= item.product.name.capitalize %> |
+      <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %>
+
+      <p>
+        <% if item.product.on_sale %>
+          Unit Price: <%= number_to_currency item.product.sale_price %>
+        <% else %>
+          Unit Price: <%= number_to_currency item.product.price %>
+        <% end %>
+           | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %>
+      </p>
+    </li>
+
     <br>
   <% end %>
 </ol>
