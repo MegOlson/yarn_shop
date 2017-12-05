@@ -1,11 +1,12 @@
 <div class="welcome">
-  <h1>Welcome to Nifty Knitters!</h1>
+  <h1>Welcome to Nifty Knitters! <%= image_tag('yarn.png') %>
+</h1>
 </div>
 <hr>
 
 <div class="row">
   <div class="col-md-6">
-    <h2>Featured Products:</h2>
+    <h2>Featured Yarn:</h2>
     <% if @featured_products.any? %>
       <% @featured_products.each do |product| %>
         <h3><%= link_to product.name.capitalize, product_path(product) %></h3>
