@@ -19,10 +19,10 @@ class ChargesController < ApplicationController
       :receipt_email => customer.email
     )
 
+    Order.empty_cart(current_order)
 
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
-  end
-  # Product.lower_stock()
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
+    end
 end

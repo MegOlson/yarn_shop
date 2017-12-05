@@ -5,8 +5,4 @@ class Product < ActiveRecord::Base
   scope :on_sale, -> { where("on_sale = ?", (true))}
   scope :featured, -> { where("featured = ?", (true))}
 
-  # def lower_stock()
-  #
-  # end
-  #
 end

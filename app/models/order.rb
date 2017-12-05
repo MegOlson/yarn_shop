@@ -4,6 +4,10 @@ class Order < ActiveRecord::Base
   before_save :update_total
   before_create :update_status
 
+  def self.empty_cart(current_order)
+    current_order.order_items.destroy_all
+  end
+
   def calculate_total
     # if product.on_sale
     #   product.sale_price = product.price
@@ -22,4 +26,5 @@ class Order < ActiveRecord::Base
   def update_total
     self.total_price = calculate_total
   end
+
 end
