@@ -25,7 +25,14 @@
           <% if current_user %>
           <li> <%= link_to "Products", products_path %> </li>
           <li> <%= link_to "Order History" %> </li>
-          <li> <%= link_to "Cart", cart_path %> <span class="glyphicon glyphicon-shopping-cart"></span> <%= number_to_currency current_order.total_price %></li>
+          <li>
+            <%= link_to "Cart", cart_path %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <% if number_to_currency current_order.total_price == nil %>
+              $0.00
+            <% end %>
+            <%= number_to_currency current_order.total_price %>
+          </li>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li>
           <% else %>
             <li> <%= link_to "Sign Up", new_user_registration_path %> </li>
