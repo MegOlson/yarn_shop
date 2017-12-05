@@ -9,11 +9,16 @@ class Order < ActiveRecord::Base
   end
 
   def calculate_total
-    # if product.on_sale
-    #   product.sale_price = product.price
-    # end
-    self.order_items.collect { |item| item.product.price * item.quantity }.sum
+    amount = self.order_items.collect do |item|
+      if item.product.on_sale
+        item.product.sale_price * item.quantity
+      else
+        item.product.price * item.quantity
+      end
+    end
+    amount.sum
   end
+
 
   private
 
