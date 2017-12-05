@@ -4,4 +4,9 @@ class Product < ActiveRecord::Base
   validates_presence_of :name, :price, :stock
   scope :on_sale, -> { where("on_sale = ?", (true))}
   scope :featured, -> { where("featured = ?", (true))}
+
+  # def lower_stock()
+  #
+  # end
+  #
 end
