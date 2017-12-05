@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :order_items
 
   resource :cart, only: [:show]
-
+  resources :charges
   devise_for :users
 end
