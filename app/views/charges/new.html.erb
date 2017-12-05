@@ -8,7 +8,7 @@
         </div>
       <% end %>
       <label class="amount">
-        <span>Amount: <%= number_to_currency current_order.total_price %> </span>
+        <span>Amount: <%= @amount %> </span>
       </label>
     </article>
 
@@ -16,7 +16,7 @@
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="Checkout"
-            data-amount="<%= (current_order.total_price) * 100 %>"
+            data-amount="<%= @amount %>"
             data-locale="auto"></script>
   <% end %>
 
