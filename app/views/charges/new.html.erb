@@ -12,6 +12,7 @@
       </label>
     </article>
 
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="Checkout"
