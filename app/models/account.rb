@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
   belongs_to :user
+  has_many :orders
 
   def bookmarked
     bookmark_order = self.orders.where(bookmarked: true).take

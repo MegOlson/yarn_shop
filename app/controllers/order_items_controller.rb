@@ -6,6 +6,7 @@ class OrderItemsController < ApplicationController
       @message = "Item saved for later."
     elsif params[:commit] == "Add to cart"
       @order = current_order
+      @order.update(account_id: current_user.account.id)
       @message = "Item added to Cart."
     end
     @item = @order.order_items.new(item_params)
