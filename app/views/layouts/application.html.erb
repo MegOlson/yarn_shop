@@ -24,7 +24,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li> <%= link_to "Products", products_path %> </li>
-          <li> <%= link_to "Order History" %> </li>
+          <li> <%= link_to "Order History", charges_path %> </li>
           <li>
             <%= link_to "Cart", cart_path %>
             <span class="glyphicon glyphicon-shopping-cart"></span>
