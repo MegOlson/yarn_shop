@@ -35,11 +35,8 @@ Feel free to contact Megan at meganannetteolson@yahoo.com
 
 <img src="https://avatars.githubusercontent.com/MegOlson?s=100" width="100" alt="megan annette olson" /><br />[<sub>megan annette olson</sub>](https://github.com/MegOlson)<br />[💻](https://github.com/MegOlson/yarn_shop/commits?author=MegOlson) [⚠️](https://github.com/MegOlson/yarn_shop/commits?author=MegOlson)
 
-<img src="https://avatars.githubusercontent.com/kristenmarie?s=100" width="100" alt="Kristen Kulha" /><br />[<sub>kristen kulha</sub>](https://github.com/kristenmarie)<br />[💻](https://github.com/kristenmarie/yarn_shop/commits?author=kristenmarie) [⚠️](https://github.com/kristenmarie/yarn_shop/commits?author=kristenmarie)
-
-
 ### License
 
-Copyright (c) 2017 **Megan Olson and Kristen Kulha**
+Copyright (c) 2017 **Megan Olson **
 
 *This software is licensed under the MIT license.*

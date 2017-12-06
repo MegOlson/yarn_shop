@@ -1,13 +1,14 @@
 class ChargesController < ApplicationController
 
   def index
-    @orders = Order.where(account_id: current_user.account.id)
+    @orders = Order.placed
   end
-  
+
   def new
   end
 
   def create
+    @cart = current_order
     @amount = ((current_order.total_price) * 100).to_i
 
     customer = Stripe::Customer.create(
@@ -26,6 +27,9 @@ class ChargesController < ApplicationController
     Product.lower_stock(current_order)
     Order.empty_cart(current_order)
     current_order.save
+
+    # @cart.lower_stock
+    # @cart.update(status: "Placed")
 
     rescue Stripe::CardError => e
       flash[:error] = e.message

@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
       Order.new
     end
   end
+  #
+  # def current_order
+  #   if current_user
+  #     current_user.account
+  #   end
+  # end
 
   def current_bookmark
     if session[:order_id]
