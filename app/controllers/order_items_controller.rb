@@ -17,6 +17,10 @@ class OrderItemsController < ApplicationController
       if @order.save
         session[:order_id] = @order.id
         flash[:notice] = @message
+        respond_to do |format|
+          format.html { redirect_to product_path }
+          format.js
+        end
       end
     end
     redirect_to products_path
