@@ -3,8 +3,8 @@
 <% if @orders.any? %>
   <% @orders.each do |order| %>
     <p> <%= order.order_items %> </p>
-    <%= @orders.first.order_items.first.product.name %>
   <% end %>
+  <%= @orders.first.order_items.first.product.name %>
 <% else %>
   <p>You haven't made any orders yet.</p>
 <% end %>
