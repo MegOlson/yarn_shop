@@ -3,7 +3,6 @@ class ChargesController < ApplicationController
   end
 
   def index
-
     @orders = Order.where(account_id: current_user.account.id)
   end
 
