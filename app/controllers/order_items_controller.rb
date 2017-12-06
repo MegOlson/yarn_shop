@@ -31,7 +31,13 @@ class OrderItemsController < ApplicationController
     @order = current_order
     @item = @order.order_items.find(params[:id])
     @item.destroy
-    @order.save
+    if @order.save
+      flash[:notice] = "Item removed from cart."
+      respond_to do |format|
+        format.html { redirect_to cart_path }
+        format.js
+      end
+    end
     redirect_to cart_path
   end
 

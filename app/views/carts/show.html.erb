@@ -6,7 +6,7 @@
 
     <li>
       <%= item.product.name.capitalize %> |
-      <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %>
+      <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"}, remote: true %>
 
       <p>
         <% if item.product.on_sale %>
