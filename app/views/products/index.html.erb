@@ -64,6 +64,7 @@
       <div class="flex-container">
         <br>
         <hr>
+        <%= image_tag product.image.url(:thumb) %>
         <%= link_to product.name.capitalize, product_path(product) %> | <%= number_to_currency product.price %> |
         <% if product.stock <= 10 %>
           <span id="low-stock">Low Stock</span>
