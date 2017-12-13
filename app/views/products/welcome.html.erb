@@ -26,5 +26,11 @@
       <p>There are no discounted products.</p>
     <% end %>
   </div>
+<hr>
+  <div class="destinations_response">
+    <% @cities.each do |city| %>
+      <p> <%= city["city"] %>, <%= city["country"]  %> </p>
+    <% end %>
+  </div>
 
 </div>

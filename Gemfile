@@ -17,6 +17,8 @@ gem 'rails_admin', '~> 1.2'
 gem 'sqlite3'
 gem 'faker'
 gem 'stripe'
+gem 'rest-client'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug', platform: :mri

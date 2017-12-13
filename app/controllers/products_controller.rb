@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   def welcome
     @discount_products = Product.on_sale
     @featured_products = Product.featured
+    @cities = Destination.get_destinations
     render :welcome
   end
 
