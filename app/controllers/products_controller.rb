@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @discount_products = Product.on_sale
     @featured_products = Product.featured
     @cities = Destination.get_destinations
+    @place = Destination.get_place(65)
     render :welcome
   end
 
